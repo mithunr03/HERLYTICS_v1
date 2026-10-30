@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  --color-rose-blush: #F9EBEF;
+  --color-rose-soft: #F3D2D9;
+  --color-rose-accent: #C96677;
+  --color-rose-deep: #8A3B4D;
+
+  --color-plum-dark: #2B1D22;
+  --color-plum-main: #533E46;
+  --color-plum-light: #866F78;
+  --color-plum-subtle: #C3B4BA;
+
+  --color-lavender-soft: #EDE8F5;
+  --color-lavender-main: #A895D1;
+
+  --color-peach-soft: #FDF0EB;
+  --color-peach-accent: #EE9E86;
+
+  --color-sage-soft: #E7F3EF;
+  --color-sage-accent: #5B9F8E;
+
+  --color-cream-bg: #FAF7F5;
+  --color-cream-card: #FFFFFF;
+  --color-cream-border: #EFE8E6;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F5;
+    color: #2B1D22;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #F4D3DA;
+    color: #5A2330;
+  }
+}
+
+/* Polished Card & Panel Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #EFE8E6;
+}
+
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #EFE8E6;
+  box-shadow: 0 4px 18px -4px rgba(43, 29, 34, 0.04), 0 2px 6px -2px rgba(43, 29, 34, 0.02);
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 30px -8px rgba(138, 59, 77, 0.07), 0 3px 12px -2px rgba(43, 29, 34, 0.03);
+}
+
+.soft-shadow-lg {
+  box-shadow: 0 16px 40px -10px rgba(138, 59, 77, 0.1), 0 6px 18px -3px rgba(43, 29, 34, 0.04);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5D8DA;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C96677;
+}
+
+/* Restrained Floating & Transitions */
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: floatSubtle 5s ease-in-out infinite;
+}
